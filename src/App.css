@@ -1,0 +1,152 @@
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.chat-container {
+  max-width: 600px;
+  margin: 40px auto;
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 20px;
+}
+
+.status {
+  font-weight: bold;
+  color: #90caf9;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.message {
+  background-color: #031117;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+}
+
+.message strong {
+  color: #64b5f6;
+}
+
+.timestamp {
+  display: block;
+  font-size: 0.8em;
+  color: #888;
+  margin-top: 4px;
+}
+
+.own-message {
+  background-color: #003366;
+}
+
+.input-area {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.input-area button {
+  padding: 10px 16px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.input-area button:hover {
+  background-color: #005fa3;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 100px auto;
+  gap: 10px;
+}
+
+.login-form input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.login-form button {
+  padding: 10px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #005fa3;
+}
+
+@media (max-width: 640px) {
+  .chat-container {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .input-area {
+    flex-direction: column;
+  }
+
+  .input-area input,
+  .input-area button {
+    width: 100%;
+  }
+}
+
+.message {
+  max-width: 80%;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  position: relative;
+  word-wrap: break-word;
+}
+
+/* Messages from others (left side) */
+.other-message {
+  background-color: #031117;
+  margin-right: auto;
+  text-align: left;
+}
+
+/* Your own messages (right side) */
+.own-message {
+  background-color: #003366;
+  margin-left: auto;
+  text-align: right;
+}
+
+/* Optional: timestamp styling */
+.timestamp {
+  display: block;
+  font-size: 0.8em;
+  color: #888;
+  margin-top: 4px;
+}
