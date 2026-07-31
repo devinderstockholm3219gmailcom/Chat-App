@@ -28,6 +28,8 @@
     "vite": "npm:rolldown-vite@7.1.14"
   },
   "overrides": {
-    "vite": "npm:rolldown-vite@7.1.14"
+    "vite": "npm:rolldown-vite@7.1.14",
+    "socket.io-parser": "^4.2.6",
+    "ws": "^8.21.0"
   }
 }
