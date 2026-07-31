@@ -5,11 +5,20 @@ import cors from "cors";
 import { randomUUID } from "crypto";
 
 const app = express();
-app.use(cors());
 
+// Don't advertise the framework in response headers.
+app.disable("x-powered-by");
+
+// Allowed browser origin(s). Defaults to "*" for local dev; set CLIENT_ORIGIN in production.
+// eslint-disable-next-line no-undef
+const CLIENT_ORIGIN = process.env.CLIENT_ORIGIN || "*";
+app.use(cors({ origin: CLIENT_ORIGIN }));
+
+// Plain HTTP here is intentional: Socket.IO needs an http.Server, and TLS is
+// terminated by the reverse proxy (e.g. nginx) in front of this service in production.
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-  cors: { origin: "*", methods: ["GET", "POST"] },
+  cors: { origin: CLIENT_ORIGIN, methods: ["GET", "POST"] },
 });
 
 // socketId -> username for tracking who is online
